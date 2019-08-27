@@ -10,4 +10,4 @@ jobs:
     steps:
     - name: FTP Deploy Action
       uses: SamKirkland/FTP-Deploy-Action@1.0.0
-      secrets = ["FTP_USERNAME", "FTP_PASSWORD", "FTP_SERVER"]
+      secrets: ["FTP_USERNAME", "FTP_PASSWORD", "FTP_SERVER"]
