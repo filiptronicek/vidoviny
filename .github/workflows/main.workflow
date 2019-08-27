@@ -4,6 +4,6 @@ workflow "New workflow" {
 }
 
 action "SamKirkland/FTP-Deploy-Action" {
-  uses = "SamKirkland/FTP-Deploy-Action"
+  uses = "SamKirkland/FTP-Deploy-Action@master"
   secrets = ["FTP_PASSWORD", "FTP_SERVER", "FTP_USERNAME", "REMOTE_DIR"]
 }
