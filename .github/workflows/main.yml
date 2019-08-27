@@ -10,7 +10,3 @@ jobs:
     steps:
     - name: FTP Deploy Action
       uses: SamKirkland/FTP-Deploy-Action@1.0.0
-      secrets: 
-        FTP_USERNAME: Mona
-        FTP_PASSWORD: Lisa
-        FTP_SERVER: "google.com"
