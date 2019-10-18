@@ -23,14 +23,23 @@
       type="text/css"
     />
     <link rel="stylesheet" href="wireframe.css" />
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-115658841-2");
+    <script type="text/javascript">
+      var _paq = window._paq || [];
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      (function() {
+        var u = "//nfogix.com/";
+        _paq.push(["setTrackerUrl", u + "api/track"]);
+        _paq.push(["setSiteId", "e33a8924-ab1c-4838-b32a-f2712d61d401"]);
+        var d = document,
+          g = d.createElement("script"),
+          s = d.getElementsByTagName("script")[0];
+        g.type = "text/javascript";
+        g.async = true;
+        g.defer = true;
+        g.src = u + "js/nfogix.min.js";
+        s.parentNode.insertBefore(g, s);
+      })();
     </script>
   </head>
 
