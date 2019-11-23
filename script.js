@@ -1,4 +1,4 @@
-var ids = new Array();
+var ids = [];
 var demoP = document.getElementById("ytembed");
 $.get("yt.txt", function(data) {
   var ids = data.split("\n");
