@@ -1,11 +1,10 @@
-var ids = [];
-var demoP = document.getElementById("ytembed");
+let ids = [];
+const demoP = document.getElementById("ytembed");
 $.get("yt.txt", function(data) {
-  var ids = data.split("\n");
-  console.log(ids);
+  const ids = data.split("\n");
   ids.reverse();
   $.each(ids, function(index, item) {
-    var itemid = item.toString().split("=");
+    const itemid = item.toString().split("=");
     console.log(itemid[1]);
     $("#ytembed").append(
       `<div class="youtube" data-embed="${itemid[1]}"></div> <br /><br />`
@@ -20,21 +19,21 @@ function topFunction() {
 setTimeout(function(){
 ( function() {
 
-  var youtube = document.querySelectorAll( ".youtube" );
+  const youtube = document.querySelectorAll( ".youtube" );
   
   for (var i = 0; i < youtube.length; i++) {
       
-      var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/hqdefault.jpg";
+      const source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/hqdefault.jpg";
       
-      var image = new Image();
+      const image = new Image();
               image.src = source;
               image.addEventListener( "load", function() {
-                  youtube[ i ].appendChild( image );
-              }( i ) );
+                  youtube[i].appendChild( image );
+              }(i) );
       
               youtube[i].addEventListener( "click", function() {
 
-                  var iframe = document.createElement( "iframe" );
+                  const iframe = document.createElement( "iframe" );
 
                           iframe.setAttribute( "frameborder", "0" );
                           iframe.setAttribute( "allowfullscreen", "" );
