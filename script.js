@@ -20,7 +20,7 @@ setTimeout(function () {
   (function () {
     const youtube = document.querySelectorAll(".youtube");
 
-    for (var i = 0; i < youtube.length; i++) {
+    for (let i = 0; i < youtube.length; i++) {
       const source =
         "https://img.youtube.com/vi/" +
         youtube[i].dataset.embed +
