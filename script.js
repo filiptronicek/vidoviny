@@ -10,6 +10,7 @@ $.get("yt.txt", (data) => {
       $("#ytembed").append(`<div class="youtube" data-embed="${itemid[1]}"></div> <br /><br />`);
     });
   });
+  
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
