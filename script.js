@@ -21,7 +21,7 @@ setTimeout(() => {
         const youtube = document.querySelectorAll(".youtube");
 
         for (let i = 0; i < youtube.length; i++) {
-            const source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
+            const source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/hqdefault.jpg`;
 
             const image = new Image();
             image.src = source;
