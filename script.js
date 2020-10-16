@@ -1,14 +1,15 @@
 let ids = [];
+const YTURLRegex = new RegExp('/https:\/\/www.youtube.com\/watch\?v=.{11}/g');
 
 const demoP = document.getElementById("ytembed");
 $.get("yt.txt", (data) => {
     const ids = data.split("\n");
     ids.reverse();
     $.each(ids, (_index, item) => {
-      const itemid = item.toString().split("=");
-      $("#ytembed").append(`<div class="youtube" data-embed="${itemid[1]}"></div> <br /><br />`);
+        const itemid = item.toString().split("=")[1];
+        $("#ytembed").append(`<div class="youtube" data-embed="${itemid}"></div> <br /><br />`);
     });
-  });
+});
 
 function topFunction() {
     document.body.scrollTop = 0;
@@ -17,27 +18,27 @@ function topFunction() {
 
 setTimeout(() => {
     (() => {
-      const youtube = document.querySelectorAll(".youtube");
+        const youtube = document.querySelectorAll(".youtube");
 
-      for (let i = 0; i < youtube.length; i++) {
-        const source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
+        for (let i = 0; i < youtube.length; i++) {
+            const source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
 
-        const image = new Image();
-        image.src = source;
-        image.addEventListener("load", (() => {
-          youtube[i].appendChild(image);
-        })(i));
+            const image = new Image();
+            image.src = source;
+            image.addEventListener("load", (() => {
+                youtube[i].appendChild(image);
+            })(i));
 
-        youtube[i].addEventListener("click", () => {
-          const iframe = document.createElement("iframe");
+            youtube[i].addEventListener("click", () => {
+                const iframe = document.createElement("iframe");
 
-          iframe.setAttribute("frameborder", "0");
-          iframe.setAttribute("allowfullscreen", "");
-          iframe.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
 
-          this.innerHTML = "";
-          this.appendChild(iframe);
-        });
-      }
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        }
     })();
-  }, 2000);
+}, 2000);
