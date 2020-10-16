@@ -4,13 +4,13 @@ const demoP = document.getElementById("ytembed");
 $.get("yt.txt", (data) => {
     const ids = data.split("\n");
     ids.reverse();
-    $.each(ids, (index, item) => {
+    $.each(ids, (_index, item) => {
       const itemid = item.toString().split("=");
       console.log(itemid[1]);
       $("#ytembed").append(`<div class="youtube" data-embed="${itemid[1]}"></div> <br /><br />`);
     });
   });
-  
+
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
