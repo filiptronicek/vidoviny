@@ -6,7 +6,6 @@ $.get("yt.txt", (data) => {
     ids.reverse();
     $.each(ids, (_index, item) => {
       const itemid = item.toString().split("=");
-      console.log(itemid[1]);
       $("#ytembed").append(`<div class="youtube" data-embed="${itemid[1]}"></div> <br /><br />`);
     });
   });
