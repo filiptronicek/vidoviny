@@ -19,7 +19,6 @@ function topFunction() {
 setTimeout(() => {
     (() => {
         const youtube = document.querySelectorAll(".youtube");
-
         for (let i = 0; i < youtube.length; i++) {
             const source = `https://img.youtube.com/vi/${youtube[i].dataset.embed}/hqdefault.jpg`;
 
@@ -34,10 +33,10 @@ setTimeout(() => {
 
                 iframe.setAttribute("frameborder", "0");
                 iframe.setAttribute("allowfullscreen", "");
-                iframe.setAttribute("src", `https://www.youtube-nocookie.com/embed/${this.dataset.embed}?rel=0&showinfo=0&autoplay=1`);
+                iframe.setAttribute("src", `https://www.youtube-nocookie.com/embed/${youtube[i].dataset.embed}?rel=0&showinfo=0&autoplay=1`);
 
-                this.innerHTML = "";
-                this.appendChild(iframe);
+                youtube[i].innerHTML = "";
+                youtube[i].appendChild(iframe);
             });
         }
     })();
